@@ -39,21 +39,21 @@ def db_wrtr(total, n2):
         if len(resFacilities) == 0:
             return
 
-        # try:
-        #     query3 = "INSERT INTO upz_hotels_facilityties_test1 (hotelid, facilitytype_id, name, facilitytype_name, hotelfacilitytype_id, uniq) VALUES (%s, %s, %s, %s, %s, %s)"
+        try:
+            query3 = "INSERT INTO upz_hotels_facilityties_test1 (hotelid, facilitytype_id, name, facilitytype_name, hotelfacilitytype_id, uniq) VALUES (%s, %s, %s, %s, %s, %s)"
 
-        #     for item in resFacilities:
-        #         try:
-        #             values = (item["hotelid"], item["facilitytype_id"], item["name"], item["facilitytype_name"], item["hotelfacilitytype_id"], item["uniq"])
-        #             cursor.execute(query3, values)
-        #             whiteList_set.add(item["hotelid"])
+            for item in resFacilities:
+                try:
+                    values = (item["hotelid"], item["facilitytype_id"], item["name"], item["facilitytype_name"], item["hotelfacilitytype_id"], item["uniq"])
+                    cursor.execute(query3, values)
+                    whiteList_set.add(item["hotelid"])
                     
-        #         except Exception as ex:
-        #             print(ex)
-        #             continue
-        #     conn.commit()
-        # except:
-        #     pass
+                except Exception as ex:
+                    print(ex)
+                    continue
+            conn.commit()
+        except:
+            pass
         try:
             query3 = "INSERT INTO upz_hotels_facilityties (hotelid, facilitytype_id, name, facilitytype_name, hotelfacilitytype_id, uniq) VALUES (%s, %s, %s, %s, %s, %s)"
 
