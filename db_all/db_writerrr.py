@@ -64,10 +64,10 @@ def db_wrtr(total, n2):
         except:
             pass 
 
-        try:
-           semaforr(conn, cursor, n)
-        except:
-            pass
+        # try:
+        #    semaforr(conn, cursor, n)
+        # except:
+        #     pass
  
         try:
             cursor.close()
